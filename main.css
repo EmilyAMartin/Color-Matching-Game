@@ -1,0 +1,21 @@
+body {
+	background: #ffffff;
+	margin: 0;
+}
+
+.tiles {
+	display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+	grid-template-columns: repeat(4, 100px);
+	gap: 16px;
+	box-sizing: border-box;
+}
+
+.tile {
+	height: 100px;
+	background: #9b9b9b;
+	cursor: pointer;
+    border-radius: 5px ;
+}
