@@ -1,18 +1,16 @@
 body {
 	font-family: Arial, sans-serif;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	background-color: #f0f0f0;
-	margin: 0;
+	background-color: #E9D8A6;
+	margin: 5rem;
 }
-.game-board{
-	display: flex;
-	border: 1px solid red;
-	max-width: 50%;
+.header{
+	font-size: 2rem;
+	font-family: "Permanent Marker", cursive;;
 }
-
 .tiles {
 	display: grid;
     justify-content: center;
@@ -21,12 +19,13 @@ body {
 	grid-template-columns: repeat(4, 100px);
 	gap: 16px;
 	box-sizing: border-box;
+	transform: translate(-50% -50%);
 	border: 1px solid red;
 }
 
 .tile {
 	height: 100px;
-	background: #9b9b9b;
+	background: #001219;
 	cursor: pointer;
     border-radius: 5px ;
 }
