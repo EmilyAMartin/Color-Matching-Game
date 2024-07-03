@@ -4,8 +4,12 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #E9D8A6;
+	background-color: #ffffff;
 	margin: 5rem;
+}
+.game-board{
+  	display: flex;
+ 	flex-wrap: wrap;
 }
 .header{
 	font-size: 2rem;
@@ -20,12 +24,15 @@ body {
 	gap: 16px;
 	box-sizing: border-box;
 	transform: translate(-50% -50%);
-	border: 1px solid red;
 }
-
 .tile {
 	height: 100px;
-	background: #001219;
+	background: #d4d3ce;
 	cursor: pointer;
     border-radius: 5px ;
+}
+@media (max-width: 800px) {
+	.header, .tiles {
+	  flex: 100%;
+	}
 }
