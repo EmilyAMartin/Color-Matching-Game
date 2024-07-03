@@ -1,19 +1,20 @@
 body {
 	font-family: Arial, sans-serif;
+	background-color: #ffffff;
+	margin: 5rem;
+}
+.header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	font-family: "Permanent Marker", cursive;;
+}
+.game-board{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #ffffff;
-	margin: 5rem;
-}
-.game-board{
-  	display: flex;
- 	flex-wrap: wrap;
-}
-.header{
-	font-size: 2rem;
-	font-family: "Permanent Marker", cursive;;
 }
 .tiles {
 	display: grid;
@@ -31,8 +32,10 @@ body {
 	cursor: pointer;
     border-radius: 5px ;
 }
-@media (max-width: 800px) {
-	.header, .tiles {
-	  flex: 100%;
+@media only screen and (max-width: 100px) {
+	.game-board {
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
 	}
-}
+  }
