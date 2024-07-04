@@ -7,8 +7,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 2rem;
-	font-family: "Permanent Marker", cursive;
+	font-size: 3rem;
+	font-family:  "Dosis", sans-serif;
 }
 
 .tiles {
@@ -22,9 +22,12 @@ body {
 }
 .tile {
 	height: 6rem;
-	background: #d4d3ce;
+	background: #999894;
 	cursor: pointer;
     border-radius: 0.5rem ;
+}
+#win-msg{
+	display:none;
 }
 #you-win{
 	display: flex;
@@ -33,15 +36,18 @@ body {
 	align-items: center;
 	font-size: 2rem;
 	gap:1rem;
-	font-family: "Permanent Marker", cursive;
+	font-family: "Dosis", sans-serif;
 }
 .button{
-	background-color: rgb(22, 92, 20);
+	background-color: #0a9396;
 	color: #ffffff;
 	text-align: center;
 	width: 8rem;
-	height: 3.5rem;
+	height: 3rem;
 	border-radius: 0.5rem;
+}
+.button:hover{
+	background-color: #105b5c;
 }
 @media only screen and (max-width: 500px) {
 	.tiles{

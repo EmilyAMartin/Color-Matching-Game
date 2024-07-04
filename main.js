@@ -35,7 +35,7 @@ function buildTile(color) {
             revealedCount += 2;
 
         if (revealedCount === tileCount) {
-            document.getElementById("you-win")
+            document.getElementById("win-msg").style.display = "block";
             }
             return;
         }
@@ -60,4 +60,7 @@ for (let i = 0; i < tileCount; i++) {
 
     colorsPicklist.splice(randomIndex, 1); //Max two colors//
     tilesContainer.appendChild(tile);
+}
+function restart(){
+    window.location.reload()
 }

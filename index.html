@@ -5,16 +5,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Color Match</title>
-	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="main.css">
 	<script src="main.js" defer></script>
 </head>
 <body>
 	<div class="header" id="game-title">Color Match</div>
 	<div class="tiles"></div>
-	<div class="container" id="you-win">
-		<div class="text">You Win</div>
-		<div class="button" onclick="">Replay</div>
-
+	<div class="container" id="win-msg">
+		<div class="flex-container" id="you-win">
+			<div class="text">You Win!!</div>
+			<div class="button" id="replay-button"onclick="restart()">Replay</div>
+		</div>
+	</div>
 </body>
 </html>
