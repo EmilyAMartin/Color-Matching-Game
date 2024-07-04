@@ -35,7 +35,7 @@ function buildTile(color) {
             revealedCount += 2;
 
         if (revealedCount === tileCount) {
-            alert ("You Win");
+            document.getElementById("you-win")
             }
             return;
         }

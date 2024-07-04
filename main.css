@@ -1,21 +1,16 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #ffffff;
-	margin: 5rem;
+	margin: 6rem;
 }
 .header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 2rem;
-	font-family: "Permanent Marker", cursive;;
+	font-family: "Permanent Marker", cursive;
 }
-.game-board{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
+
 .tiles {
 	display: grid;
     justify-content: center;
@@ -30,6 +25,23 @@ body {
 	background: #d4d3ce;
 	cursor: pointer;
     border-radius: 0.5rem ;
+}
+#you-win{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	gap:1rem;
+	font-family: "Permanent Marker", cursive;
+}
+.button{
+	background-color: rgb(22, 92, 20);
+	color: #ffffff;
+	text-align: center;
+	width: 8rem;
+	height: 3.5rem;
+	border-radius: 0.5rem;
 }
 @media only screen and (max-width: 500px) {
 	.tiles{
