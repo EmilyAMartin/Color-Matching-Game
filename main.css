@@ -20,22 +20,22 @@ body {
 	display: grid;
     justify-content: center;
     align-items: center;
-    margin: 50px;
-	grid-template-columns: repeat(4, 100px);
-	gap: 16px;
+    margin: 2rem;
+	grid-template-columns: repeat(4, 6rem);
+	gap: 1rem;
 	box-sizing: border-box;
-	transform: translate(-50% -50%);
 }
 .tile {
-	height: 100px;
+	height: 6rem;
 	background: #d4d3ce;
 	cursor: pointer;
-    border-radius: 5px ;
+    border-radius: 0.5rem ;
 }
-@media only screen and (max-width: 100px) {
-	.game-board {
-	flex-wrap: wrap;
-	width: 100%;
-	margin: 0;
+@media only screen and (max-width: 500px) {
+	.tiles{
+		grid-template-columns: repeat(4, 4rem);
+	}
+	.tile{
+		height: 4rem;
 	}
   }
