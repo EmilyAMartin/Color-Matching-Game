@@ -17,24 +17,26 @@ let activeTile = null;
 let awaitingEndOfMove = false;
 
 function buildTile(color) {
-  const element = document.createElement("div");
-  element.classList.add("tile");
-  element.setAttribute("data-color", color);
-  element.setAttribute("data-revealed", "false");
-  element.addEventListener("click", () => {
-    const revealed = element.getAttribute("data-revealed");
-    if (awaitingEndOfMove || revealed === "true" || element === activeTile) {
+  const tile = document.createElement("div");
+  const tileFront = document.createElement("div");
+  document.createElement("div");
+  tile.classList.add("tile");
+  tile.setAttribute("data-color", color);
+  tile.setAttribute("data-revealed", "false");
+  tile.addEventListener("click", () => {
+    const revealed = tile.getAttribute("data-revealed");
+    if (awaitingEndOfMove || revealed === "true" || tile === activeTile) {
       return;
     }
-    element.style.backgroundColor = color;
+    tile.style.backgroundColor = color;
     if (!activeTile) {
-      activeTile = element;
+      activeTile = tile;
       return;
     }
     const colorToMatch = activeTile.getAttribute("data-color");
     if (colorToMatch === color) {
       activeTile.setAttribute("data-revealed", "true");
-      element.setAttribute("data-revealed", "true");
+      tile.setAttribute("data-revealed", "true");
       awaitingEndOfMove = false;
       activeTile = null;
       revealedCount += 2;
@@ -47,14 +49,14 @@ function buildTile(color) {
 
     awaitingEndOfMove = true;
     setTimeout(() => {
-      element.style.backgroundColor = null;
+      tile.style.backgroundColor = null;
       activeTile.style.backgroundColor = null;
       awaitingEndOfMove = false;
       activeTile = null;
     }, 1000);
   });
 
-  return element;
+  return tile;
 }
 
 //Tiles//
@@ -65,6 +67,8 @@ for (let i = 0; i < tileCount; i++) {
 
   colorsList.splice(randomIndex, 1); //Max two colors//
   tilesContainer.appendChild(tile);
+  tile.appendChild(tile - front);
+  tile.appendChild(tile - back);
 }
 function restart() {
   window.location.reload();
