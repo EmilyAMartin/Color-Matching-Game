@@ -19,7 +19,9 @@ let awaitingEndOfMove = false;
 function buildTile(color) {
   const tile = document.createElement("div");
   const tileFront = document.createElement("div");
-  document.createElement("div");
+  tile.appendChild(tileFront);
+  const tileBack = document.createElement("div");
+  tile.appendChild(tileBack);
   tile.classList.add("tile");
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
@@ -67,8 +69,6 @@ for (let i = 0; i < tileCount; i++) {
 
   colorsList.splice(randomIndex, 1); //Max two colors//
   tilesContainer.appendChild(tile);
-  tile.appendChild(tile - front);
-  tile.appendChild(tile - back);
 }
 function restart() {
   window.location.reload();
