@@ -19,12 +19,11 @@ function buildTile(color) {
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.innerHTML = `
-    <div class="flip-card-inner">
-      <div class="flip-card-front"><i class="${color}"></i></div>
-      <div class="flip-card-back"></div>
-    </div>`;
+      <div class="tile-front"></div>
+      <div class="tile-back"></div>`;
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
+
   tile.addEventListener("click", () => {
     const revealed = tile.getAttribute("data-revealed");
     if (awaitingEndOfMove || revealed === "true" || tile === activeTile) {
