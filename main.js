@@ -9,20 +9,20 @@ const colors = [
   "#AE2012",
   "#9B2226",
 ];
-const colorsList = [...colors, ...colors];
-const tileCount = colorsList.length;
-
+const colorsPicklist = [...colors, ...colors];
+const tileCount = colorsPicklist.length;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
 function buildTile(color) {
   const tile = document.createElement("div");
-  const tileFront = document.createElement("div");
-  tile.appendChild(tileFront);
-  const tileBack = document.createElement("div");
-  tile.appendChild(tileBack);
   tile.classList.add("tile");
+  tile.innerHTML = `
+    <div class="flip-card-inner">
+      <div class="flip-card-front"><i class="${color}"></i></div>
+      <div class="flip-card-back"></div>
+    </div>`;
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
   tile.addEventListener("click", () => {
@@ -63,11 +63,11 @@ function buildTile(color) {
 
 //Tiles//
 for (let i = 0; i < tileCount; i++) {
-  const randomIndex = Math.floor(Math.random() * colorsList.length);
-  const color = colorsList[randomIndex];
+  const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
+  const color = colorsPicklist[randomIndex];
   const tile = buildTile(color);
 
-  colorsList.splice(randomIndex, 1); //Max two colors//
+  colorsPicklist.splice(randomIndex, 1); //Max two colors//
   tilesContainer.appendChild(tile);
 }
 function restart() {
