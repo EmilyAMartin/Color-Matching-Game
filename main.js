@@ -14,7 +14,6 @@ const tileCount = colorsPicklist.length;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
-var rotate = (tile.style.transform = "rotateY(180deg)");
 
 function buildTile(color) {
   const tile = document.createElement("div");
@@ -26,6 +25,7 @@ function buildTile(color) {
   tile.setAttribute("data-revealed", "false");
 
   tile.addEventListener("click", () => {
+    tile.style.transform = "rotateY(180deg)";
     const revealed = tile.getAttribute("data-revealed");
     if (awaitingEndOfMove || revealed === "true" || tile === activeTile) {
       return;

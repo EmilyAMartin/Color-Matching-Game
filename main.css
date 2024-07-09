@@ -26,7 +26,7 @@ body {
   cursor: pointer;
   border-radius: 0.5rem;
   transition: transform 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 #win-msg {
   display: none;
@@ -58,5 +58,8 @@ body {
   }
   .tile {
     height: 4rem;
+  }
+  .header {
+    font-size: 2.3rem;
   }
 }
