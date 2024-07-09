@@ -14,12 +14,13 @@ const tileCount = colorsPicklist.length;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
+var rotate = (tile.style.transform = "rotateY(180deg)");
 
 function buildTile(color) {
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.innerHTML = `
-      <div class="tile-front"></div>
+      <div class="tile-front" onclick="flip()"></div>
       <div class="tile-back"></div>`;
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
@@ -30,7 +31,6 @@ function buildTile(color) {
       return;
     }
     tile.style.backgroundColor = color;
-    tile.style.transform = "rotateY(180deg"; //Kind of working//
     if (!activeTile) {
       activeTile = tile;
       return;
