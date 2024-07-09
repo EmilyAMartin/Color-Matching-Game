@@ -29,9 +29,6 @@ body {
   transition: transform 0.5s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
-.tile:active {
-  transform: rotateY(180deg);
-}
 #win-msg {
   display: none;
 }
@@ -51,6 +48,7 @@ body {
   width: 8rem;
   height: 3rem;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 .button:hover {
   background-color: #105b5c;
