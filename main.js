@@ -30,6 +30,7 @@ function buildTile(color) {
       return;
     }
     tile.style.backgroundColor = color;
+    tile.style.transform = "rotateY(180deg"; //Kind of working//
     if (!activeTile) {
       activeTile = tile;
       return;
@@ -55,7 +56,6 @@ function buildTile(color) {
       awaitingEndOfMove = false;
       activeTile = null;
     }, 1000);
-    tile.style.transform = "rotateY(180deg";
   });
 
   return tile;
