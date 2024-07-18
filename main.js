@@ -15,7 +15,17 @@ let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
+//Timer//
+var outOfTime = false;
+var countdownStarted = false;
+var time = 30;
+
 function buildTile(color) {
+  // Timer//
+  if (!countdownStarted) {
+    countdown();
+  }
+  //
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.innerHTML = `
@@ -72,4 +82,21 @@ for (let i = 0; i < tileCount; i++) {
 }
 function restart() {
   window.location.reload();
+}
+function countdown() {
+  countdownStarted = true;
+  var timeStart = +new Date();
+  var timer = setInterval(function () {
+    var timeNow = +new Date();
+    var difference = (timeNow - timeStart) / 1000;
+    if (time > 0) {
+      time = 30;
+      time = Math.floor(time - difference);
+    } else {
+      outOfTime = true;
+      alert("you have run out of time");
+      clearInterval(timer);
+      window.location.reload();
+    }
+  }, 250);
 }
