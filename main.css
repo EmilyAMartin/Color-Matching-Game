@@ -65,14 +65,13 @@ body {
 }
 .timer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   color: white;
   background: #0a9396;
-  width: 8vh;
-  height: 8vh;
-  line-height: 8vh;
-  border-radius: 4vh;
-  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
 }
