@@ -56,6 +56,7 @@ function buildTile(color) {
 
       if (revealedCount === tileCount) {
         document.getElementById("win-msg").style.display = "block";
+        outOfTime = false;
       }
       return;
     }

@@ -78,8 +78,8 @@ body {
   font-size: 1.5rem;
   color: white;
   background: #0a9396;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 0.5rem;
   float: initial;
 }
