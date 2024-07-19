@@ -3,12 +3,19 @@ body {
   background-color: #ffffff;
   margin: 6rem;
 }
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
   font-family: "Dosis", sans-serif;
+  gap: 1rem;
 }
 
 .tiles {
@@ -63,7 +70,7 @@ body {
     font-size: 2.3rem;
   }
 }
-.timer {
+.time {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,4 +81,5 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  float: initial;
 }

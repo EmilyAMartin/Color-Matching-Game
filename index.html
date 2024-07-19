@@ -13,14 +13,18 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div class="header" id="game-title">Color Match</div>
-    <div class="tiles"></div>
-    <div class="timer" id="timer">30</div>
-    <div class="container" id="win-msg">
-      <div class="flex-container" id="you-win">
-        <div class="text">You Win!!</div>
-        <div class="button" id="replay-button" onclick="restart()">Replay</div>
+    <div class="game">
+      <div class="header" id="game-title">Color Match</div>
+      <div class="tiles"></div>
+      <div class="container" id="win-msg">
+        <div class="flex-container" id="you-win">
+          <div class="text">You Win!!</div>
+          <div class="button" id="replay-button" onclick="restart()">
+            Replay
+          </div>
+        </div>
       </div>
+      <div class="time" id="timer">30</div>
     </div>
   </body>
 </html>
