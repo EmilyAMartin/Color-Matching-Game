@@ -19,14 +19,31 @@ let awaitingEndOfMove = false;
 var outOfTime = false;
 var countdownStarted = false;
 var time = 30;
-
-if (!countdownStarted) {
-  countdown();
+function countdown() {
+  countdownStarted = true;
+  var timeStart = +new Date();
+  var timer = setInterval(function () {
+    var timeNow = +new Date();
+    var difference = (timeNow - timeStart) / 1000;
+    if (time > 0) {
+      time = 30;
+      time = Math.floor(time - difference);
+      var ele = document.getElementById("timer");
+      ele.innerHTML = time;
+    } else {
+      outOfTime = true;
+      alert("you have run out of time");
+      clearInterval(timer);
+      window.location.reload();
+    }
+    if (revealedCount === tileCount) {
+      clearInterval(timer);
+    }
+  }, 250);
 }
 
 function buildTile(color) {
   // Timer//
-
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.innerHTML = `
@@ -36,6 +53,9 @@ function buildTile(color) {
   tile.setAttribute("data-revealed", "false");
 
   tile.addEventListener("click", () => {
+    if (!countdownStarted) {
+      countdown();
+    }
     tile.style.transform = "rotateY(180deg)";
     const revealed = tile.getAttribute("data-revealed");
     if (awaitingEndOfMove || revealed === "true" || tile === activeTile) {
@@ -56,7 +76,7 @@ function buildTile(color) {
 
       if (revealedCount === tileCount) {
         document.getElementById("win-msg").style.display = "block";
-        outOfTime = false;
+        clearInterval();
       }
       return;
     }
@@ -84,23 +104,4 @@ for (let i = 0; i < tileCount; i++) {
 }
 function restart() {
   window.location.reload();
-}
-function countdown() {
-  countdownStarted = true;
-  var timeStart = +new Date();
-  var timer = setInterval(function () {
-    var timeNow = +new Date();
-    var difference = (timeNow - timeStart) / 1000;
-    if (time > 0) {
-      time = 30;
-      time = Math.floor(time - difference);
-      var ele = document.getElementById("timer");
-      ele.innerHTML = time;
-    } else {
-      outOfTime = true;
-      alert("you have run out of time");
-      clearInterval(timer);
-      window.location.reload();
-    }
-  }, 250);
 }
