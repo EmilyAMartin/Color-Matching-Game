@@ -41,7 +41,6 @@ function countdown() {
     }
   }, 250);
 }
-
 function buildTile(color) {
   // Timer//
   const tile = document.createElement("div");
@@ -51,12 +50,11 @@ function buildTile(color) {
       <div class="tile-back"></div>`;
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
-
   tile.addEventListener("click", () => {
+    tile.style.transform = "rotateY(180deg)";
     if (!countdownStarted) {
       countdown();
     }
-    tile.style.transform = "rotateY(180deg)";
     const revealed = tile.getAttribute("data-revealed");
     if (awaitingEndOfMove || revealed === "true" || tile === activeTile) {
       return;
@@ -80,7 +78,6 @@ function buildTile(color) {
       }
       return;
     }
-
     awaitingEndOfMove = true;
     setTimeout(() => {
       tile.style.backgroundColor = null;
@@ -93,12 +90,11 @@ function buildTile(color) {
   return tile;
 }
 
-//Tiles//
+//Tile Color//
 for (let i = 0; i < tileCount; i++) {
   const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
   const color = colorsPicklist[randomIndex];
   const tile = buildTile(color);
-
   colorsPicklist.splice(randomIndex, 1); //Max two colors//
   tilesContainer.appendChild(tile);
 }

@@ -35,6 +35,11 @@ body {
   transition: transform 0.5s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
+.tile:visited {
+  transform: rotateY(180deg);
+  transition: 0.3s;
+}
+
 #win-msg {
   display: none;
 }
