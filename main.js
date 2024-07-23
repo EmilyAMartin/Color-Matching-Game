@@ -41,6 +41,7 @@ function countdown() {
     }
   }, 250);
 }
+
 function buildTile(color) {
   // Timer//
   const tile = document.createElement("div");
@@ -52,6 +53,7 @@ function buildTile(color) {
   tile.setAttribute("data-revealed", "false");
   tile.addEventListener("click", () => {
     tile.style.transform = "rotateY(180deg)";
+
     if (!countdownStarted) {
       countdown();
     }
@@ -62,6 +64,8 @@ function buildTile(color) {
     tile.style.backgroundColor = color;
     if (!activeTile) {
       activeTile = tile;
+      tile.style.transform = "rotateY(180deg)";
+
       return;
     }
     const colorToMatch = activeTile.getAttribute("data-color");

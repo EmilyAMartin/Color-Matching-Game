@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-  margin: 6rem;
+  margin: 5rem;
+  overflow: hidden;
 }
 .game {
   display: flex;
