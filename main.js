@@ -1,3 +1,4 @@
+//Game Variables//
 const tilesContainer = document.querySelector(".tiles");
 const colors = [
   "#001219",
@@ -9,16 +10,17 @@ const colors = [
   "#AE2012",
   "#9B2226",
 ];
-const colorsPicklist = [...colors, ...colors];
-const tileCount = colorsPicklist.length;
+const colorsList = [...colors, ...colors];
+const tileCount = colorsList.length;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
-//Timer//
+// Game Timer//
 var outOfTime = false;
 var countdownStarted = false;
 var time = 30;
+
 function countdown() {
   countdownStarted = true;
   var timeStart = +new Date();
@@ -42,8 +44,13 @@ function countdown() {
   }, 250);
 }
 
+//Game Restart Button//
+function restart() {
+  window.location.reload();
+}
+
+//Game//
 function buildTile(color) {
-  // Timer//
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.innerHTML = `
@@ -51,9 +58,9 @@ function buildTile(color) {
       <div class="tile-back"></div>`;
   tile.setAttribute("data-color", color);
   tile.setAttribute("data-revealed", "false");
+  //On Click//
   tile.addEventListener("click", () => {
     tile.style.transform = "rotateY(180deg)";
-
     if (!countdownStarted) {
       countdown();
     }
@@ -64,8 +71,6 @@ function buildTile(color) {
     tile.style.backgroundColor = color;
     if (!activeTile) {
       activeTile = tile;
-      tile.style.transform = "rotateY(180deg)";
-
       return;
     }
     const colorToMatch = activeTile.getAttribute("data-color");
@@ -96,12 +101,9 @@ function buildTile(color) {
 
 //Tile Color//
 for (let i = 0; i < tileCount; i++) {
-  const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
-  const color = colorsPicklist[randomIndex];
+  const randomIndex = Math.floor(Math.random() * colorsList.length);
+  const color = colorsList[randomIndex];
   const tile = buildTile(color);
-  colorsPicklist.splice(randomIndex, 1); //Max two colors//
+  colorsList.splice(randomIndex, 1); //Creates a max of two colors//
   tilesContainer.appendChild(tile);
-}
-function restart() {
-  window.location.reload();
 }
