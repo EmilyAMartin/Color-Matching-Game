@@ -58,24 +58,20 @@ function buildTile(color) {
       <div class="tile-back"></div>`;
 	tile.setAttribute('data-color', color);
 	tile.setAttribute('data-revealed', 'false');
+
 	//On Click//
 	tile.addEventListener('click', () => {
-		// Ensure the countdown starts after the first tile is clicked
 		if (!countdownStarted) {
-			countdown(); // Start the countdown as soon as the first click happens
+			countdown();
 		}
 
 		if (awaitingEndOfMove || tile === activeTile) {
 			return;
 		}
-
-		// Check if the tile has already been revealed
 		const revealed = tile.getAttribute('data-revealed');
 		if (revealed === 'true') {
-			return; // Don't flip if already revealed
+			return;
 		}
-
-		// Flip the tile and show the color
 		tile.style.transform = 'rotateY(180deg)';
 		tile.style.backgroundColor = color;
 
@@ -83,10 +79,8 @@ function buildTile(color) {
 			activeTile = tile;
 			return;
 		}
-
 		const colorToMatch = activeTile.getAttribute('data-color');
 		if (colorToMatch === color) {
-			// If tiles match, mark them as revealed
 			activeTile.setAttribute('data-revealed', 'true');
 			tile.setAttribute('data-revealed', 'true');
 			awaitingEndOfMove = false;
@@ -99,8 +93,6 @@ function buildTile(color) {
 			}
 			return;
 		}
-
-		// If the tiles don't match, hide them again after a delay
 		awaitingEndOfMove = true;
 		setTimeout(() => {
 			tile.style.backgroundColor = null;
