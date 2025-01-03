@@ -19,3 +19,7 @@ Languages - HTML/CSS/JavaScript
 ## Credits
 
 ## Preview
+
+<img src="img/01.jpg" alt="start game screen" width="500"/>
+<img src="img/03.jpg" alt="game play example" width="500"/>
+<img src="img/02.jpg" alt="you win game screen" width="500"/>
